@@ -1,0 +1,81 @@
+{
+  "pluginAlias": "SomfyConnectivityKit",
+  "pluginType": "platform",
+  "singular": true,
+  "headerDisplay": "Steuert Somfy-Geräte (io-homecontrol und RTS) über das Somfy Connectivity Kit bzw. die Somfy-Cloud. Zugangsdaten = Login der TaHoma-App.",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "Name",
+        "type": "string",
+        "default": "Somfy",
+        "required": true
+      },
+      "username": {
+        "title": "E-Mail (TaHoma-App)",
+        "type": "string",
+        "format": "email",
+        "required": true
+      },
+      "password": {
+        "title": "Passwort",
+        "type": "string",
+        "required": true,
+        "x-schema-form": { "type": "password" }
+      },
+      "gatewayId": {
+        "title": "Gateway-PIN (optional)",
+        "type": "string",
+        "description": "Nur nötig, wenn mehrere Somfy-Boxen im Konto sind (Format 1234-5678-9012). Steht auf der Box und im Log."
+      },
+      "authMode": {
+        "title": "Login-Verfahren",
+        "type": "string",
+        "default": "auto",
+        "oneOf": [
+          { "title": "Automatisch (empfohlen)", "enum": ["auto"] },
+          { "title": "Somfy-Konto (aktuelles App-Verfahren)", "enum": ["account"] },
+          { "title": "Legacy (älteres Verfahren)", "enum": ["legacy"] }
+        ]
+      },
+      "pollingInterval": {
+        "title": "Event-Abfrage (Sekunden)",
+        "type": "integer",
+        "default": 5,
+        "minimum": 2,
+        "maximum": 60,
+        "description": "Wie oft Statusänderungen aus der Cloud geholt werden."
+      },
+      "refreshInterval": {
+        "title": "Vollständiger Abgleich (Minuten)",
+        "type": "integer",
+        "default": 30,
+        "minimum": 5
+      },
+      "invert": {
+        "title": "Richtung umkehren",
+        "type": "array",
+        "description": "Gerätenamen, bei denen offen/zu vertauscht ist.",
+        "items": { "type": "string" }
+      },
+      "exclude": {
+        "title": "Ausblenden",
+        "type": "array",
+        "description": "Gerätenamen, Geräte-URLs oder Typen (z. B. Light), die nicht in HomeKit erscheinen sollen.",
+        "items": { "type": "string" }
+      }
+    }
+  },
+  "layout": [
+    "name",
+    "username",
+    "password",
+    {
+      "type": "fieldset",
+      "title": "Erweitert",
+      "expandable": true,
+      "items": ["gatewayId", "authMode", "pollingInterval", "refreshInterval", "invert", "exclude"]
+    }
+  ]
+}

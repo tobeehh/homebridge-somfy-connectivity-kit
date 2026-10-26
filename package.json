@@ -1,0 +1,37 @@
+{
+  "name": "homebridge-somfy-connectivity-kit",
+  "displayName": "Somfy Connectivity Kit",
+  "version": "1.0.0",
+  "description": "Homebridge 2 plugin for the Somfy Connectivity Kit (and other Somfy Overkiz cloud gateways such as Connexoon / TaHoma).",
+  "main": "index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tobeehh/homebridge-somfy-connectivity-kit.git"
+  },
+  "homepage": "https://github.com/tobeehh/homebridge-somfy-connectivity-kit#readme",
+  "bugs": {
+    "url": "https://github.com/tobeehh/homebridge-somfy-connectivity-kit/issues"
+  },
+  "keywords": [
+    "homebridge-plugin",
+    "somfy",
+    "connectivity kit",
+    "tahoma",
+    "connexoon",
+    "overkiz",
+    "io-homecontrol",
+    "rts"
+  ],
+  "engines": {
+    "node": "^20.0.0 || ^22.0.0 || ^24.0.0",
+    "homebridge": "^1.8.0 || ^2.0.0"
+  },
+  "files": [
+    "index.js",
+    "lib/",
+    "config.schema.json",
+    "README.md"
+  ],
+  "dependencies": {}
+}
