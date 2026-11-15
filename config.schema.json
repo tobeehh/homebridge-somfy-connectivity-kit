@@ -56,7 +56,7 @@
       "invert": {
         "title": "Richtung umkehren",
         "type": "array",
-        "description": "Gerätenamen, bei denen offen/zu vertauscht ist.",
+        "description": "Gerätenamen, bei denen offen/zu vertauscht angezeigt wird (Rollläden, Markisen und Garagentore).",
         "items": { "type": "string" }
       },
       "exclude": {

@@ -53,7 +53,7 @@ Optional:
 | `authMode` | `auto` | `auto`, `account` (aktuelles App-Login) oder `legacy` |
 | `pollingInterval` | `5` | Sekunden zwischen den Event-Abfragen |
 | `refreshInterval` | `30` | Minuten zwischen vollständigen Status-Abgleichen |
-| `invert` | `[]` | Gerätenamen mit vertauschter Richtung |
+| `invert` | `[]` | Gerätenamen, bei denen offen/zu vertauscht angezeigt wird (Rollläden, Markisen, Garagentore) |
 | `exclude` | `[]` | Gerätenamen, URLs oder Typen (`Light`, `Awning` …), die ausgeblendet werden |
 
 Empfehlung: Lass das Plugin als **Child Bridge** laufen (Plugin-Einstellungen → „Bridge Settings“).
