@@ -53,6 +53,14 @@
         "default": 30,
         "minimum": 5
       },
+      "statusInterval": {
+        "title": "Geräte aktiv abfragen (Minuten)",
+        "type": "integer",
+        "default": 5,
+        "minimum": 0,
+        "maximum": 60,
+        "description": "Die Box fragt io-Geräte mit Rückmeldung (Tor, Rollläden, Markisen) per Funk nach ihrem Zustand – erkennt auch Fahrten per Handsender. 0 = aus."
+      },
       "invert": {
         "title": "Richtung umkehren",
         "type": "array",
@@ -75,7 +83,7 @@
       "type": "fieldset",
       "title": "Erweitert",
       "expandable": true,
-      "items": ["gatewayId", "authMode", "pollingInterval", "refreshInterval", "invert", "exclude"]
+      "items": ["gatewayId", "authMode", "pollingInterval", "statusInterval", "refreshInterval", "invert", "exclude"]
     }
   ]
 }

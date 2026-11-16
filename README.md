@@ -52,6 +52,7 @@ Optional:
 | `gatewayId` | – | Nur bei mehreren Somfy-Boxen nötig, z. B. `1234-5678-9012` |
 | `authMode` | `auto` | `auto`, `account` (aktuelles App-Login) oder `legacy` |
 | `pollingInterval` | `5` | Sekunden zwischen den Event-Abfragen |
+| `statusInterval` | `5` | Minuten zwischen aktiven Funk-Abfragen der io-Geräte mit Rückmeldung (erkennt Handsender-Fahrten), 0 = aus |
 | `refreshInterval` | `30` | Minuten zwischen vollständigen Status-Abgleichen |
 | `invert` | `[]` | Gerätenamen, bei denen offen/zu vertauscht angezeigt wird (Rollläden, Markisen, Garagentore) |
 | `exclude` | `[]` | Gerätenamen, URLs oder Typen (`Light`, `Awning` …), die ausgeblendet werden |
