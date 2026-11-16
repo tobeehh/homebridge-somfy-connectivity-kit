@@ -17,7 +17,7 @@ Geschrieben und getestet für **Homebridge 2.x** (läuft auch auf 1.8+), Node.js
 Weitere Funktionen:
 - Schieberegler werden entprellt, sodass nur der Endwert gesendet wird.
 - „Stopp“ erfolgt über HoldPosition.
-- Statusänderungen aus der Somfy-App oder vom Wandtaster kommen per Event-Abfrage (Standard alle 5 s).
+- Abfrageverhalten wie bei homebridge-tahoma: Statusänderungen werden alle 60 s aus der Cloud geholt, während ein Befehl läuft alle 5 s. Alle 30 Minuten fragt die Box alle Geräte per Funk ab (erkennt auch Fahrten per Handsender).
 - Es gibt einen automatischen Re-Login, ein Token-Refresh und eine Neuregistrierung des Event-Listeners.
 
 ## Installation
@@ -51,9 +51,8 @@ Optional:
 |---|---|---|
 | `gatewayId` | – | Nur bei mehreren Somfy-Boxen nötig, z. B. `1234-5678-9012` |
 | `authMode` | `auto` | `auto`, `account` (aktuelles App-Login) oder `legacy` |
-| `pollingInterval` | `5` | Sekunden zwischen den Event-Abfragen |
-| `statusInterval` | `5` | Minuten zwischen aktiven Funk-Abfragen der io-Geräte mit Rückmeldung (erkennt Handsender-Fahrten), 0 = aus |
-| `refreshInterval` | `30` | Minuten zwischen vollständigen Status-Abgleichen |
+| `pollingInterval` | `60` | Sekunden zwischen den Event-Abfragen (10–60; während eines Befehls automatisch 5 s) |
+| `refreshInterval` | `30` | Minuten zwischen aktiven Funk-Abfragen aller Geräte (erkennt Handsender-Fahrten) |
 | `invert` | `[]` | Gerätenamen, bei denen offen/zu vertauscht angezeigt wird (Rollläden, Markisen, Garagentore) |
 | `exclude` | `[]` | Gerätenamen, URLs oder Typen (`Light`, `Awning` …), die ausgeblendet werden |
 

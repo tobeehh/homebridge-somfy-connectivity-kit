@@ -42,24 +42,17 @@
       "pollingInterval": {
         "title": "Event-Abfrage (Sekunden)",
         "type": "integer",
-        "default": 5,
-        "minimum": 2,
+        "default": 60,
+        "minimum": 10,
         "maximum": 60,
-        "description": "Wie oft Statusänderungen aus der Cloud geholt werden."
+        "description": "Wie oft Statusänderungen aus der Cloud geholt werden. Während ein Befehl läuft, automatisch alle 5 Sekunden. Wie bei homebridge-tahoma: unter 30 s nicht empfohlen."
       },
       "refreshInterval": {
-        "title": "Vollständiger Abgleich (Minuten)",
-        "type": "integer",
-        "default": 30,
-        "minimum": 5
-      },
-      "statusInterval": {
         "title": "Geräte aktiv abfragen (Minuten)",
         "type": "integer",
-        "default": 5,
-        "minimum": 0,
-        "maximum": 60,
-        "description": "Die Box fragt io-Geräte mit Rückmeldung (Tor, Rollläden, Markisen) per Funk nach ihrem Zustand – erkennt auch Fahrten per Handsender. 0 = aus."
+        "default": 30,
+        "minimum": 5,
+        "description": "Die Box fragt alle Geräte per Funk nach ihrem Zustand – erkennt auch Fahrten per Handsender. Wie bei homebridge-tahoma: unter 30 Minuten nicht empfohlen."
       },
       "invert": {
         "title": "Richtung umkehren",
@@ -83,7 +76,7 @@
       "type": "fieldset",
       "title": "Erweitert",
       "expandable": true,
-      "items": ["gatewayId", "authMode", "pollingInterval", "statusInterval", "refreshInterval", "invert", "exclude"]
+      "items": ["gatewayId", "authMode", "pollingInterval", "refreshInterval", "invert", "exclude"]
     }
   ]
 }
