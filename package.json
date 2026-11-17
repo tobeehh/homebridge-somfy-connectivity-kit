@@ -1,7 +1,7 @@
 {
   "name": "homebridge-somfy-connectivity-kit",
   "displayName": "Somfy Connectivity Kit",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Homebridge 2 plugin for the Somfy Connectivity Kit (and other Somfy Overkiz cloud gateways such as Connexoon / TaHoma).",
   "main": "index.js",
   "license": "MIT",
@@ -24,7 +24,7 @@
     "rts"
   ],
   "engines": {
-    "node": "^20.0.0 || ^22.0.0 || ^24.0.0",
+    "node": "^20.0.0 || ^22.0.0 || ^24.0.0 || ^26.0.0",
     "homebridge": "^1.8.0 || ^2.0.0"
   },
   "files": [
